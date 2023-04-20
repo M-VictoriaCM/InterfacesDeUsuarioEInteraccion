@@ -1,0 +1,246 @@
+:root {
+    --angle: 45deg;
+    --color_body: rgb(22, 26, 46);
+    --color_primary: rgb(3, 212, 231);
+    --color_primary_dark: rgb(1, 130, 142);
+    --color_accent: rgb(211, 2, 165);
+
+    --color_font: rgb(251, 251, 254, 0.3);
+    --font: font
+}
+
+
+* {/*----- estilos generales -----*/
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background: var(--color_body);
+    
+}
+
+.main,
+.container,
+.info {
+    display: flex;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.container { /*cuadrante del reloj*/   
+    align-items: center;
+    height: 400px;
+    width: 400px;
+    position: relative;
+    border: 10px solid transparent
+}
+
+.clock {/*cuadrante del reloj*/
+    background: var(--color_body);
+    background-clip: padding-box;
+    border-radius: 50%;
+    box-shadow: 2px 9px 37px rgba(3, 212, 231, 0.2);
+}
+
+.clock::before { /*cuadrante del reloj*/
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -10px;
+    border-radius: inherit;
+    background: linear-gradient(var(--angle), rgba(3, 212, 231, 1)0%, rgba(211, 2, 165, 1)100%);
+    animation: spin 2s linear infinite;
+}
+
+.circle { /*cuadrante del reloj*/
+    border-radius: 50%;
+}
+
+@keyframes spin {/*animacion del cuadrante*/
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.numb { /*Numeros del cuadrante*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.7rem;
+}
+
+.numb::after {/*marquitas del cuadrante*/
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 8px;
+    margin: 2px 0;
+    background: var(--color_primary_dark);
+}
+
+p {/*Color de los numeros*/
+    color: var(--color_primary);
+}
+
+.info {/*contenedor del texto*/
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+}
+
+.info .txt {
+    color: var(--color_font);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/*Ubicacion de los numeros alrededor de la circunsferencia*/
+.numb1 {
+    transform: rotate(30deg);
+}
+
+.numb1 p {/*Para que el numero no quede mal*/
+    transform: rotate(-30deg);
+}
+
+.numb2 {
+    transform: rotate(60deg);
+}
+
+.numb2 p {
+    transform: rotate(-60deg);
+}
+
+.numb3 p {
+    transform: rotate(-90deg);
+}
+
+.numb3 {
+    transform: rotate(90deg);
+}
+
+.numb4 {
+    transform: rotate(120deg);
+}
+
+.numb4 p {
+    transform: rotate(-120deg);
+}
+
+.numb5 {
+    transform: rotate(150deg);
+}
+
+.numb5 p {
+    transform: rotate(-150deg);
+}
+
+.numb6 {
+    transform: rotate(180deg);
+}
+
+.numb6 p {
+    transform: rotate(-180deg);
+}
+
+.numb7 {
+    transform: rotate(210deg);
+}
+
+.numb7 p {
+    transform: rotate(-210deg);
+}
+
+.numb8 {
+    transform: rotate(240deg);
+}
+
+.numb8 p {
+    transform: rotate(-240deg);
+}
+
+.numb9 {
+    transform: rotate(270deg);
+}
+
+.numb9 p {
+    transform: rotate(-270deg);
+}
+
+.numb10 {
+    transform: rotate(300deg);
+}
+
+.numb10 p {
+    transform: rotate(-300deg);
+}
+
+.numb11 {
+    transform: rotate(330deg);
+}
+
+.numb11 p {
+    transform: rotate(-330deg);
+}
+
+.hands {/*Estilo general de todas las agujas*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hands .hand {/*posicion de las agujas*/    
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hour {/*Aguja de la hora*/
+    height: 26%;
+    width: 8px;
+    border-radius: 10px;
+    background: var(--color_primary_dark);
+}
+
+.min {/*Aguja de los minutos*/
+    height: 34%;
+    width: 4px;
+    border-radius: 5px;
+    background: var(--color_primary);
+}
+
+.sec {/*Aguja de los segundos*/
+    height: 41%;
+    width: 2px;
+    border-radius: 4px;
+    background: var(--color_accent);
+
+}
