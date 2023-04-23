@@ -1,0 +1,97 @@
+/*Estilos generales*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+.card-container,
+.card_content,
+.info{
+	display: flex;
+	align-items: flex-end;
+}
+
+body{
+	min-height: 100vh;
+	background:url(../img/galaxy.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+/*Contenedor de la card*/
+.card-container{
+	margin: auto;
+	perspective: 700px;
+}
+/*Estilos de la card*/
+.card_content{
+	width: 400px;
+	height: 400px;
+	background: linear-gradient(
+		135deg, rgba(204,154,218,0.66) 0%, 
+		rgba(223,215,239,0.66) 0%, 
+		rgba(204,154,218,0.66) 0%, 
+		rgba(240,204,240,0.66) 0%, 
+		rgba(204,154,218,0.75) 45%, 
+		rgba(157,95,177,0.81) 75%, 
+		rgba(118,46,142,0.81) 100%);  
+	border-radius: 50%;
+	transform-style: preserve-3d;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	transition:all 1s ease-in-out;
+	box-shadow: inset 52px 20px 36px -19px 
+				rgb(127 13 184 / 49%);
+}
+.info{
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+.info > p{
+	margin:1rem;
+	color: black;
+	text-align: center;
+	font-size: 2rem;
+	font-family: monospace;
+	opacity:1; 
+	transition:all 1s ease-in-out
+}
+
+.card_img{
+	position:absolute;
+	width: 350px;
+	height: 350px;
+	margin:10px;
+	transition:all 1s ease-in-out
+}
+
+.card_content:hover{
+	transform:rotateX(80deg) scale(1.2);
+	background: transparent;
+	box-shadow: none;
+}
+.card_content:hover .info > p{
+	opacity: 0;
+}
+.card_content:hover .info > p:hover{
+	opacity: 1;
+}
+/*esto es para que el cohete de un giro completo+90°, 
+scale es para que mantenga su tamaño y traslate para que este por encima de la card */
+.card_img:hover{
+	transform: rotateY(-450deg) rotateX(-90deg) scale(1) translateX(200px);	
+	cursor:pointer;
+}
+/*esto es para que al sacar el cursor vuelva el cohete a su lugar*/
+.card_img{
+	transition: 2s ease-in;
+	transform: none;
+}
+
+
