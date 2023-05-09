@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-------------------------- iconos de font-awesome ----------------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Paint-html+css+js</title>
+</head>
+
+<body>
+    <div class="grid_container">
+        <header class="content header ">
+            <div class="header_content">
+                <div class="header_txt">
+                    <i class="fa-solid fa-palette icon_header"></i>
+                    <h1>PicassoDraw</h1>
+                </div>
+                <div class="button header__upload">
+                    <span class="text_input">Subir Archivo</span>
+                    <input class="btn_subir" type="file" id="file">
+                </div>
+            </div> 
+        </header>
+
+        <main class="content">
+            <div class="content__main">
+                <section class="section">
+                    <div class="tools-board">
+                        <div class="row">
+                            <label for="" class="title">Herramientas</label>
+            <!-------------------------- HERRAMIENTAS -------------------------->
+                            <div class="options">
+                                <div class="container__tool">
+                                    <button class="option active tool" id="pen">
+                                        <i class="fa-solid fa-pencil icon"></i>
+                                    </button>
+                                    <button class="option tool" id="eraser">
+                                        <i class="fa-solid fa-eraser icon"></i>        
+                                    </button>
+                                    
+                                </div>
+                                <div class="container_range ">
+                                    <div class="filtre">
+                                        <label for="" class="title">Tamaño</label>
+                                        <input type="range" id="size-slider" class="range" min="1" max="30" value="3">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+             <!-------------------------- PALETA DE COLORES -------------------------->
+                        <div class="row colors">
+                            <label class="title">Paleta de colores</label>
+                            <ul class="options">
+                                <li class="option"></li>
+                                <li class="option selected"></li>
+                                <li class="option"></li>
+                                <li class="option">
+                                    <input type="color" id="color-picker" value="#000000" name="">
+                                </li>
+                            </ul>
+                        </div>
+            <!-------------------------- FILTROS -------------------------->
+                        <div class="rows filtres">
+                            <label for="" class="title">Filtros</label>
+                            <div class="container_btn">
+                                <div class="container_btn__filter">
+                                    <button class="btn_filtre filtre-neg" id="btnNegative">
+                                       <span class="text_input">Negativo</span>
+                                    </button>
+                                    <button class="btn_filtre filtre-sepia" id="btnSepia">
+                                        <span class="text_input">Sepia</span>
+                                    </button>
+                                    <button class="btn_filtre filtre-binary" id="size-umbral">
+                                        <span class="text_input">Binarización</span>
+                                    </button>
+                                    <button class="btn_filtre filtre-binary" id="sobel">
+                                        <span class="text_input">Det. de bordes</span>
+                                    </button>
+                                    <button class="btn_filtre filtre-binary" id="size-saturate">
+                                        <span class="text_input">Saturación</span>
+                                    </button>
+                                </div>
+                                <div class="container_btn_restore">
+                                    <button class="filtre-restore" id="restore">
+                                        <i class="fa-solid fa-reply icon"></i>
+                                    </button>
+                                </div> 
+                            </div>
+
+                            <div class="container_range">
+                                <div class="filtre">
+                                    <label for="" class="title">Brillo</label>
+                                        <input type="range" id="size-gloss"  class="range" min="-255" max="255" value="0">
+                                </div>                               
+                            </div>
+                        </div>
+            <!-------------------------- OPCIONES -------------------------->
+                        <div class="row buttons">
+                            <button class="clear-canvas">
+                                <span>Reset</span>
+                            </button>
+                            <button class="save-img">
+                                <span >Guardar</span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </section>
+                <section class="section drawing-board">
+                    <div class="section_container">
+                        <canvas id="myCanvas" width="950" height="560"></canvas>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <!-- Script de la pagina -->
+    <script src="assets/js/Pen.js"></script>
+    <script src="assets/js/picture.js"></script>
+    <script src="assets/js/app.js"></script>
+
+
+</body>
+
+</html>
