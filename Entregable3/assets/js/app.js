@@ -1,6 +1,6 @@
 "use strict";
 
-const action = new Run();
+const action = new Action();
 
 document.addEventListener('keydown', handleKeyDown);
 
@@ -13,5 +13,5 @@ function handleKeyDown(e){
 setInterval(gameLoop, 50);
 
 function gameLoop(){
-    
+
 }
