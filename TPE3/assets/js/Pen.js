@@ -48,17 +48,3 @@ class Pen{
     }
 	
 }
-
-/*Pen(e.offsetX, e.offsetY, colorPicker, context, sizeSlider); 
-
-/*let startDraw = (e) => {
-	isDrawing = true;
-	prevMouseX = e.offsetX;
-	prevMouseY = e.offsetY
-	context.lineJoin = context.lineCap = 'round';//estilo de la
-	context.lineWidth = penWidth;//ancho de la linea
-	context.strokeStyle = selectedColor;//color de la linea
-	context.fillStyle = selectedColor;
-	context.beginPath();
-}
-*/
